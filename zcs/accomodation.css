@@ -1,0 +1,185 @@
+/* --- CSS Reset & Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #6665a8; /* Light gray background for the page */
+    color: #333;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('images\zcs_127.jpg');
+}
+
+h1, h2, h3, .logo {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Serif font matching the image */
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: #43447b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo-subtext {
+    font-size: 12px;
+    display: block;
+    margin-top: -2px;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.449);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #d1b86d; /* Gold/Yellow hover effect */
+}
+
+.book-btn {
+    background-color: #d1b86d; /* Gold/Yellow button */
+    color: #1a5e43;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #e5d08e;
+}
+
+/* --- Hero Section --- */
+.hero {
+    /* Background image with a slight overlay to make text readable */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('images\zcs_127.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    color: #1a5e43;
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Makes text pop off the image */
+}
+
+.hero p {
+    color: #1a5e43;
+    font-size: 18px;
+    font-weight: 500;
+    max-width: 700px;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* --- Accommodation Cards Section --- */
+.cards-container {
+    max-width: 1200px;
+    margin: -30px auto 50px auto; /* Pulls cards up slightly over the hero section */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden; /* Keeps image corners rounded */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 4px solid #fff; /* Creates a nice white frame around the image */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Small hover effect */
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: #1a5e43; /* Dark green title */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 15px;
+}
+
+/* --- Responsive Design (Mobile/Tablets) --- */
+@media (max-width: 900px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+    }
+}

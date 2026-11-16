@@ -1,0 +1,103 @@
+/* --- 1. Global Styles --- */
+Body {
+    Margin: 0;
+    Font-family: ‘Franklin Gothic Medium’, ‘Arial Narrow’, Arial, sans-serif;
+    Text-align: center;
+    Font-size: large;
+    Text-transform: capitalize;
+}
+
+/* --- 2. Navigation Bar --- */
+.top-nav {
+    Display: flex;
+    Justify-content: flex-end;
+    Align-items: center;
+    Gap: 15px;
+    Padding: 15px; 
+    background-color: rgb(255,255,255,255);
+    Flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-button {
+    Text-decoration: none;
+    Color: #1a1a5a;
+    Font-size: 14px;
+    Font-weight: 600;
+    Padding: 8px 20px;
+    Border: 2px solid #1a1a5a;
+    Border-radius: 4px; /* Slight rounded corners look better */
+    Text-transform: uppercase;
+    Letter-spacing: 0.5px;
+}
+
+.nav-button:hover {
+    Background-color: #1a1a5a;
+    Color: #7571b9;
+}
+
+/* --- 3. Main Hero Section --- */
+.project {
+    Background-image: url(‘images/project.jpg’); 
+    Background-size: cover;
+    Background-position: center center;
+    Background-repeat: no-repeat;
+    Min-height: 100vh; 
+    Display: flex;
+    Flex-direction: column;
+    Justify-content: center;
+    Align-items: center;
+    Padding: 20px;
+    width: 100%;
+    
+    /* Makes text white with a dark shadow so you can read it over the image */
+    Color: #ffffff;
+    Text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); 
+}
+.project{
+    transition: background-image 1s ease-in-out;
+}
+
+.project h1 {
+    Font-size: 3rem;
+    Margin-bottom: 10px;
+}
+
+/* --- 4. The “For Enquiries” Button --- */
+.btn {
+    Display: inline-block;
+    Margin-top: 30px;
+    Padding: 12px 30px;
+    Background-color: #1a1a5a;
+    Color: #ffffff;
+    Text-decoration: none;
+    Font-weight: bold;
+    Border: 2px solid #1a1a5a;
+    Border-radius: 4px;
+    Transition: all 0.3s ease;
+    Text-transform: uppercase;
+    Text-shadow: none; /* Removes shadow from the button text */
+}
+
+.btn:hover {
+    Background-color: #ffffff;
+    Color: #1a1a5a;
+}
+
+/* --- 5. Mobile Responsiveness (Tablets & Phones) --- */
+@media (max-width: 768px) {
+    .top-nav {
+        Justify-content: center;
+        Padding: 15px;
+    }
+    
+    .nav-button {
+        Font-size: 12px;
+        Padding: 6px 12px;
+    }
+
+    .project h1 {
+        Font-size: 2rem; /* Makes heading smaller on phones */
+    }
+}
