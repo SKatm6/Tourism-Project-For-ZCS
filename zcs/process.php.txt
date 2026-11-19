@@ -1,0 +1,41 @@
+<?php
+// Turn on error reporting so we can see what's wrong
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$servername = "localhost";
+$username = "root"; 
+$password = "";     
+$dbname = "booking_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Checking connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// ONLY running code if the form was actually submitted via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Get data from the form
+    $full_name = $_POST['full_name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+
+    // Inserting into the database (Fixed the $sql variable here)
+    $stmt= $conn->prepare("INSERT INTO bookings(full_name,email,phone,address) VALUES (?,?,?,?)");
+    
+    $stmt->bind_param("ssss", $full_name,$email,$phone,$address);
+
+    if ($stmt->execute()) {
+      echo  "<h2>Booking successful!</h2>";
+    }
+   } else{
+        echo "Error:" . $stmt->error;
+    }
+
+    $stmt->close();
+?>
